@@ -1,4 +1,4 @@
-import * as assert from 'assert';
+import assert from 'assert';
 import * as fs from 'fs-extra-promise';
 import * as _ from 'lodash';
 import * as path from 'path';
@@ -210,9 +210,9 @@ suite('World tests', function () {
         server.stop();
         // Assert if exits were correctly read
         assert.strictEqual(logs.filter((line) => line.match('exits')).length, 3, 'invalid logs length');
-        assert.ok(_.find(logs, (line) => line.match('W0N0 exits: {"7":"W1N0"}')), 'W0N0 exits not found or incorrect');
-        assert.ok(_.find(logs, (line) => line.match('W0N1 exits: {"1":"W0N2","7":"W1N1"}')), 'W0N1 exits not found or incorrect');
-        assert.ok(_.find(logs, (line) => line.match('W1N2 exits: {"5":"W1N1","7":"W2N2"}')), 'W1N2 exits not found or incorrect');
+        assert.ok(_.find(logs, (line) => line.match('W0N0 exits: {"7":"W1N0"}'.replaceAll('"', '&#x22;'))), 'W0N0 exits not found or incorrect');
+        assert.ok(_.find(logs, (line) => line.match('W0N1 exits: {"1":"W0N2","7":"W1N1"}'.replaceAll('"', '&#x22;'))), 'W0N1 exits not found or incorrect');
+        assert.ok(_.find(logs, (line) => line.match('W1N2 exits: {"5":"W1N1","7":"W2N2"}'.replaceAll('"', '&#x22;'))), 'W1N2 exits not found or incorrect');
     });
 
     teardown(async () => {

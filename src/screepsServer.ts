@@ -105,7 +105,7 @@ export default class ScreepsServer extends EventEmitter {
             MODFILE:      path.resolve(this.opts.path, MOD_FILE),
             STORAGE_PORT: `${this.opts.port}`,
         });
-        await new Promise((resolve, reject) => {
+        await new Promise<void>((resolve, reject) => {
             const timeout = setTimeout(() => reject(new Error('Could not launch the storage process (timeout).')), 5000);
             process.on('message', (message) => {
                 if (message === 'storageLaunched') {
@@ -124,7 +124,7 @@ export default class ScreepsServer extends EventEmitter {
             this.roomsQueue = await driver.queue.create('rooms');
             this.connected = true;
         } catch (err) {
-            throw new Error(`Error connecting to driver: ${err.stack}`);
+            throw new Error('Error connecting to driver', { cause: err });
         }
         return this;
     }

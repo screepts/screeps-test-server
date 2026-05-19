@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
-    "module": "CommonJS",
+    "module": "nodenext",
     "lib": [
-      "ES2018"
+      "ESNext"
     ],
-    "target": "ES2018",
-    "moduleResolution": "Node",
+    "target": "esnext",
+    "moduleResolution": "nodenext",
     "outDir": "dist",
-    "baseUrl": "src/",
     "allowJs": true,
     "declaration": true,
     "strict": true,
     "noImplicitReturns": true,
     "allowSyntheticDefaultImports": true,
-    "allowUnreachableCode": false
+    "allowUnreachableCode": false,
+    "types": ["screeps", "mocha"]
   },
   "exclude": [
     "node_modules"
