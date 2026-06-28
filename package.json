@@ -48,9 +48,7 @@
     "typescript": "^6.0.2"
   },
   "overrides": {
-    "screeps": {
-      "isolated-vm": "^7.0.0"
-    }
+    "isolated-vm": "^7.0.0"
   },
   "allowScripts": {
     "@screeps/driver@5.3.0": true,
@@ -58,5 +56,12 @@
     "screeps@4.3.0": true,
     "es5-ext@0.10.64": true,
     "uglifyjs-webpack-plugin@0.4.6": true
-  }
+  },
+  "trustedDependencies": [
+    "@screeps/driver",
+    "isolated-vm",
+    "es5-ext",
+    "screeps",
+    "uglifyjs-webpack-plugin"
+  ]
 }
