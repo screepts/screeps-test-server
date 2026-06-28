@@ -1,8 +1,11 @@
 {
-  "name": "screeps-server-mockup",
+  "name": "@screepts/screeps-test-server",
   "license": "MIT",
-  "repository": "https://github.com/screepers/screeps-server-mockup",
-  "version": "1.5.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/screepts/screeps-test-server.git"
+  },
+  "version": "1.5.2",
   "main": "dist/src/main.js",
   "types": "dist/src/main.d.ts",
   "scripts": {
